@@ -1,5 +1,5 @@
 {
-    "name": "pxt-reaction-game",
+    "name": "pxt-reaction-game - Copy",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -14,7 +14,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "8.0.21",
+        "target": "8.0.22",
         "targetId": "microbit"
     },
     "supportedTargets": [

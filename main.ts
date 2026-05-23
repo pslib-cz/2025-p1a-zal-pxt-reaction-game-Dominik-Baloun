@@ -62,7 +62,7 @@ input.onButtonPressed(Button.A, function () {
         state = GameState.Passive
     }
     if (state === GameState.Running) {
-        if (pressedB === false) {
+        if (!pressedB) {
             pressedA = true;
             basic.showString("A")
             state = GameState.Passive
@@ -76,7 +76,7 @@ input.onButtonPressed(Button.B, function () {
         state = GameState.Passive
     }
     if (state === GameState.Running) {
-        if (pressedA === false) {
+        if (!pressedA) {
             pressedB = true;
             basic.showString("B")
             state = GameState.Passive
@@ -89,8 +89,18 @@ input.onButtonPressed(Button.AB, function () {
         basic.showIcon(IconNames.Sad)
         state = GameState.Passive
     }
+
     if (state === GameState.Running) {
-        basic.showString("=")
+
+        if (!pressedA && !pressedB) {
+            basic.showString("=")
+        } else {
+            basic.clearScreen()
+            basic.showString("R")
+            basic.pause(200)
+            basic.clearScreen()
+        }
+
         state = GameState.Passive
     }
 })
